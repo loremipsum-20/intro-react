@@ -26,14 +26,12 @@ class App extends React.Component {
     });
   }
 
-  /*Check out this addAssignment method*/
   addAssignment(assignmentName) {
     this.setState({
       assignments: this.state.assignments.concat(assignmentName)
     });
   }
 
-  /*Write an addStudent method here*/
   addStudent(studentName) {
     this.setState({
       students: this.state.students.concat(studentName)
@@ -53,7 +51,6 @@ class App extends React.Component {
   render() {
     let tabChoice = <div />;
 
-    /*Uncomment below to render assignments*/
     if (this.state.buttonClicked === "assignments") {
       tabChoice = (
         <List
@@ -65,13 +62,11 @@ class App extends React.Component {
       );
     }
 
-    /* Change below to render students*/
-
     if (this.state.buttonClicked === "students") {
       tabChoice = (
         <List
           placeholder="Add Student..."
-          currList={this.state.student}
+          currList={this.state.students}
           addFunction={this.addStudent}
           title="Student Roster"
         />
